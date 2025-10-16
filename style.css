@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: 
     radial-gradient(circle at 50% 120%, rgba(140, 0, 255, 0.4), transparent 70%),
@@ -14,6 +15,7 @@ body {
   color: #d9e8f5;
   font-family: "Poppins", sans-serif;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -25,6 +27,7 @@ body::before {
   z-index: -1;
   backdrop-filter: blur(3px);
 }
+
 ul {
   list-style: none;
   background-color: rgba(5, 5, 15, 0.95);
@@ -42,6 +45,7 @@ ul {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(100, 100, 150, 0.2);
 }
+
 ul li a {
   display: block;
   color: #bff6dc;
@@ -50,12 +54,14 @@ ul li a {
   font-weight: 600;
   font-size: 18px;
 }
+
 ul li a:hover {
   background-color: rgba(25, 25, 40, 0.8);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   border-radius: 8px;
 }
+
 #Home {
   height: 100vh;
   display: flex;
@@ -65,12 +71,14 @@ ul li a:hover {
   text-align: center;
   padding: 100px 20px;
 }
+
 h1 {
   font-size: 56px;
   color: #bff6dc;
   font-style: italic;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
+
 #typing2 {
   font-size: 24px;
   color: #a2bee8;
@@ -92,6 +100,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
 #Biodata::before {
   content: "";
   position: absolute;
@@ -243,6 +252,7 @@ h1 {
   line-height: 1.8;
   text-align: center;
 }
+
 #About p {
   font-family: "Playwrite US Modern", serif;
   font-size: 20px;
@@ -250,6 +260,7 @@ h1 {
   line-height: 1.8;
   text-align: left;
 }
+
 #Schedule table {
   width: 100%;
   border-collapse: collapse;
@@ -258,40 +269,48 @@ h1 {
   overflow: hidden;
   font-size: 18px;
 }
+
 #Schedule th, #Schedule td {
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #1171a8;
 }
+
 #Schedule th {
   background-color: #063063;
   color: white;
 }
+
 #Schedule tbody tr:nth-child(even) {
   background-color: #108fb6;
 }
+
 #Schedule tbody tr:hover {
   background-color: #02142c;
   transition: 0.3s;
 }
+
 #HTMLCSSJS .steps {
   max-width: 900px;     
   margin: 0 auto;
   text-align: left;       
   line-height: 1.8;
 }
+
 #HTMLCSSJS .steps p {
   text-align: left;      
   line-height: 1.8;
   color: #d9e8f5;
   font-size: 18px;
 }
+
 #HTMLCSSJS .steps h2 {
   text-align: left;       
   color: #bff6dc;
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
 #CaraWebsite {
   min-height: 100vh;
   padding: 120px 100px;
@@ -300,12 +319,14 @@ h1 {
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
+
 #CaraWebsite h1 {
   font-size: 40px;
   color: #bff6dc;
   margin-bottom: 25px;
   text-align: center;
 }
+
 #CaraWebsite .steps {
   max-width: 800px;
   margin: 0 auto;
@@ -313,20 +334,24 @@ h1 {
   line-height: 1.8;
   text-justify: none;     
 }
+
 #CaraWebsite .steps p {
   text-align: left;      
 }
+
 #CaraWebsite h2 {
   color: #bff6dc;
   font-size: 24px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
 #CaraWebsite p {
   font-size: 18px;
   color: #d9e8f5;
   margin-bottom: 10px;
 }
+
 #CaraWebsite code {
   background: rgba(0, 0, 0, 0.3);
   color: #bff6dc;
@@ -334,6 +359,7 @@ h1 {
   border-radius: 5px;
   font-family: "Courier New", monospace;
 }
+
 .info-box {
   background: rgba(0, 0, 0, 0.4);   
   color: #bff6dc;                
@@ -344,6 +370,7 @@ h1 {
   max-width: 800px;                
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);  
 }
+
 #KesanPesan p {
     font-family: "noto serif";
     text-align: left;  
@@ -352,6 +379,7 @@ h1 {
     color: #d9e8f5;
     margin-bottom: 15px;
 }
+
 .star {
   position: absolute;
   border-radius: 50%;
@@ -361,6 +389,7 @@ h1 {
   animation: twinkle 2s infinite ease-in-out;
   z-index: -1;
 }
+
 .small-steps {
   font-family: "Dancing script";
   font-size: 32px;
@@ -370,7 +399,104 @@ h1 {
   text-shadow: 0 0 10px rgba(191, 246, 220, 0.4);
   letter-spacing: 1px;
 }
+
 @keyframes twinkle {
   0%, 100% { opacity: 0; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.3); }
+}
+
+
+/* =========================
+   RESPONSIVE UNTUK HP
+   ========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  ul {
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: rgba(10,10,20,0.9);
+    padding: 8px 0;
+    z-index: 999;
+  }
+
+  ul li {
+    margin: 6px 0;
+  }
+
+  ul li a {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  /* beri jarak agar konten tidak tertutup navbar */
+  section {
+    margin-top: 70px;
+  }
+
+  /* BIODATA */
+  #Biodata {
+    flex-direction: column;
+    min-height: auto;
+    padding: 60px 20px;
+    margin: 20px;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 15px;
+  }
+
+  #Biodata .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #Biodata .image-box img {
+    width: 75%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  #Biodata .text-box {
+    padding-top: 20px;
+  }
+
+  /* ABOUT */
+  #About {
+    min-height: auto;
+    padding: 60px 25px;
+    margin: 20px;
+    border-radius: 15px;
+  }
+
+  #About h3 {
+    font-size: 24px;
+  }
+
+  #About p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* TABEL SCHEDULE bisa discroll */
+  #Schedule table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* FONT UMUM LEBIH KECIL */
+  body {
+    font-size: 15px;
+  }
+
+  /* kurangi efek berat agar lebih ringan di HP */
+  .info-box, .small-steps {
+    box-shadow: none;
+    text-shadow: none;
+  }
 }
