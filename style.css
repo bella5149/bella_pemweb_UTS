@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: 
+    radial-gradient(circle at 50% 120%, rgba(140, 0, 255, 0.4), transparent 70%),
+    radial-gradient(circle at 40% 100%, rgba(0, 150, 255, 0.25), transparent 80%),
+    radial-gradient(circle at 80% 130%, rgba(255, 100, 255, 0.25), transparent 85%),
+    linear-gradient(180deg, #01010f, #030016, #060a2a, #0b1340, #120a2a);
+  background-attachment: fixed;
+  background-blend-mode: screen;
+  color: #d9e8f5;
+  font-family: "Poppins", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.9));
+  z-index: -1;
+  backdrop-filter: blur(3px);
+}
+
+ul {
+  list-style: none;
+  background-color: rgba(5, 5, 15, 0.95);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding-left: 50px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(100, 100, 150, 0.2);
+}
+
+ul li a {
+  display: block;
+  color: #bff6dc;
+  padding: 20px 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+ul li a:hover {
+  background-color: rgba(25, 25, 40, 0.8);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border-radius: 8px;
+}
+
+#Home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+h1 {
+  font-size: 56px;
+  color: #bff6dc;
+  font-style: italic;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+#typing2 {
+  font-size: 24px;
+  color: #a2bee8;
+  margin-top: 15px;
+}
+
+#Biodata {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 100px; /* sama seperti About */
+  background: rgba(255, 255, 255, 0.05);
+  margin: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  max-width: 1100px;
+  backdrop-filter: blur(10px);
+}
+
+/* Efek blur dekoratif */
+#Biodata::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(100,200,255,0.3), transparent 70%);
+  top: -50px;
+  left: -50px;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+#Biodata::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(180,100,255,0.3), transparent 70%);
+  bottom: -50px;
+  right: -50px;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+#Biodata .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  z-index: 1;
+}
+
+#Biodata .text-box {
+  flex: 1;
+}
+
+#Biodata h2 {
+  font-size: 44px;
+  color: #bff6dc;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px rgba(191, 246, 220, 0.3);
+}
+
+#Biodata .info-line {
+  background: rgba(255,255,255,0.07);
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #d9e8f5;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+#Biodata .info-line:hover {
+  background: rgba(191,246,220,0.08);
+  transform: translateX(4px);
+}
+
+/* --- FOTO: ubah jadi persegi panjang vertikal --- */
+#Biodata .image-box {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Biodata .image-box img {
+  width: 230px;
+  height: 320px; /* lebih tinggi daripada lebar */
+  border-radius: 20px; /* sudut lembut, bukan bulat penuh */
+  border: 3px solid rgba(200,200,255,0.25);
+  box-shadow: 0 0 25px rgba(191, 246, 220, 0.25);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#Biodata .image-box img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(191, 246, 220, 0.45);
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  #Biodata {
+    padding: 80px 30px;
+  }
+  #Biodata .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  #Biodata .image-box {
+    margin-bottom: 30px;
+  }
+}
+
+
+#About .contact-box {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+#About .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9e8f5;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#About .contact-item img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#About .contact-item img:hover {
+  transform: scale(1.1);
+}
+
+#About, #Schedule, #HTMLCSSJS, #CaraWebsite, #KesanPesan {
+  min-height: 100vh;
+  padding: 120px 100px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+#About h3, #Schedule h1, #HTMLCSSJS h1, #CaraWebsite h1, #KesanPesan h1 {
+  font-size: 40px;
+  color: #bff6dc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Default paragraf di beberapa section */
+#HTMLCSSJS p, #CaraWebsite p, #KesanPesan p {
+  font-size: 20px;
+  color: #d9e8f5;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Khusus About — paragraf dibuat rata kiri */
+#About p {
+  font-family: "Playwrite US Modern", serif;
+  font-size: 20px;
+  color: #d9e8f5;
+  line-height: 1.8;
+  text-align: left;
+}
+
+#Schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(6, 103, 160, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+#Schedule th, #Schedule td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #1171a8;
+}
+
+#Schedule th {
+  background-color: #063063;
+  color: white;
+}
+
+#Schedule tbody tr:nth-child(even) {
+  background-color: #108fb6;
+}
+
+#Schedule tbody tr:hover {
+  background-color: #02142c;
+  transition: 0.3s;
+}
+
+#HTMLCSSJS .steps {
+  max-width: 900px;     
+  margin: 0 auto;
+  text-align: left;       
+  line-height: 1.8;
+}
+
+#HTMLCSSJS .steps p {
+  text-align: left;      
+  line-height: 1.8;
+  color: #d9e8f5;
+  font-size: 18px;
+}
+
+#HTMLCSSJS .steps h2 {
+  text-align: left;       
+  color: #bff6dc;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#CaraWebsite {
+  min-height: 100vh;
+  padding: 120px 100px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+#CaraWebsite h1 {
+  font-size: 40px;
+  color: #bff6dc;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#CaraWebsite .steps {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;       
+  line-height: 1.8;
+  text-justify: none;     
+}
+
+#CaraWebsite .steps p {
+  text-align: left;      
+}
+
+#CaraWebsite h2 {
+  color: #bff6dc;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#CaraWebsite p {
+  font-size: 18px;
+  color: #d9e8f5;
+  margin-bottom: 10px;
+}
+
+#CaraWebsite code {
+  background: rgba(0, 0, 0, 0.3);
+  color: #bff6dc;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+}
+
+.info-box {
+  background: rgba(0, 0, 0, 0.4);   
+  color: #bff6dc;                
+  padding: 15px 20px;             
+  border-radius: 12px;          
+  margin-top: 15px;               
+  font-size: 16px;               
+  max-width: 800px;                
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);  
+}
+
+#KesanPesan p {
+    font-family: "noto serif";
+    text-align: left;  
+    line-height: 1.8;
+    font-size: 23px;
+    color: #d9e8f5;
+    margin-bottom: 15px;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  animation: twinkle 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+.small-steps {
+  font-family: "Dancing Script";
+  font-size: 32px;
+  color: #bff6dc;
+  text-align: center;
+  margin-top: 40px;
+  text-shadow: 0 0 10px rgba(191, 246, 220, 0.4);
+  letter-spacing: 1px;
+}
+
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+
+/* 🌸 MOBILE RESPONSIVE SETTINGS 🌸 */
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    height: auto;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  ul li a {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+
+  #Home {
+    padding: 80px 20px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  #typing2 {
+    font-size: 18px;
+  }
+
+  /* 📱 About & Biodata */
+  #About, #Biodata, #Schedule, #HTMLCSSJS, #CaraWebsite, #KesanPesan {
+    margin: 20px;
+    padding: 80px 25px;
+  }
+
+  #Biodata .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  #Biodata .image-box img {
+    width: 180px;
+    height: 240px;
+  }
+
+  #Biodata h2 {
+    font-size: 32px;
+  }
+
+  #Biodata .info-line {
+    font-size: 16px;
+  }
+
+  /* ✨ About */
+  #About p {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .contact-box {
+    position: static;
+    margin-top: 25px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  /* 📘 Table (Schedule) */
+  #Schedule table {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #Schedule th, #Schedule td {
+    padding: 8px 10px;
+  }
+
+  /* 💻 Code boxes & sections */
+  .info-box {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* 🌷 Headings & paragraphs */
+  #CaraWebsite h2, #HTMLCSSJS h2 {
+    font-size: 20px;
+  }
+
+  #CaraWebsite p, #HTMLCSSJS p, #KesanPesan p {
+    font-size: 16px;
+  }
+
+  /* 🌸 Small quote */
+  .small-steps {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+  #typing2 {
+    font-size: 16px;
+  }
+  .small-steps {
+    font-size: 20px;
+  }
+}
